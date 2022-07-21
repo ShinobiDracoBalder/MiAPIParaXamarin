@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiAPIParaXamarin", "MiAPIParaXamarin\MiAPIParaXamarin.csproj", "{9F07FEDA-4E9A-4E64-A036-868D1A1C6C1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiAPIParaXamarin.Common", "MiAPIParaXamarin.Common\MiAPIParaXamarin.Common.csproj", "{5CFF92A1-3B6A-4D32-ADCE-F286C6170346}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F07FEDA-4E9A-4E64-A036-868D1A1C6C1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F07FEDA-4E9A-4E64-A036-868D1A1C6C1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F07FEDA-4E9A-4E64-A036-868D1A1C6C1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F07FEDA-4E9A-4E64-A036-868D1A1C6C1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CFF92A1-3B6A-4D32-ADCE-F286C6170346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CFF92A1-3B6A-4D32-ADCE-F286C6170346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CFF92A1-3B6A-4D32-ADCE-F286C6170346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CFF92A1-3B6A-4D32-ADCE-F286C6170346}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75F347FF-B3A4-4C0A-862E-C53924D0941C}
+	EndGlobalSection
+EndGlobal
