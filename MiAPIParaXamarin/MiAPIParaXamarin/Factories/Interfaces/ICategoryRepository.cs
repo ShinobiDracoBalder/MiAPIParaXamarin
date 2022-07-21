@@ -9,5 +9,7 @@ namespace MiAPIParaXamarin.Factories.Interfaces
         Task<List<Categoria>> GetAllTblCategoriaAsync();
         Task<Categoria> GetOnlyTblCategoriaAsync(int id);
         Task<int> DeleteCategoriaAsync(int id);
+        Task<bool> ExisteCategoriaAsync(string nombre);
+        Task<bool> ExisteCategoriaAsync(int id);
     }
 }

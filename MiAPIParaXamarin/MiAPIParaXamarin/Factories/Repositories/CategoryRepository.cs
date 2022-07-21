@@ -18,7 +18,7 @@ namespace MiAPIParaXamarin.Factories.Repositories
 
         public async Task<int> AddAsync(Categoria entity)
         {
-            _dataContext.Categorias.Add(entity);
+            _dataContext.Categoria.Add(entity);
             var r = await SaveAllAsync();
             return r == true ? 1 : 0;
         }
@@ -26,48 +26,58 @@ namespace MiAPIParaXamarin.Factories.Repositories
         public async Task<int> DeleteAsync(int id)
         {
             var avatar = await _dataContext
-                .Categorias.FirstOrDefaultAsync(c => c.CategoriaId == id);
-            _dataContext.Categorias.Remove(avatar);
+                .Categoria.FirstOrDefaultAsync(c => c.CategoriaId == id);
+            _dataContext.Categoria.Remove(avatar);
             var r = await SaveAllAsync();
             return r == true ? 1 : 0;
         }
 
         public async Task<int> DeleteCategoriaAsync(int id)
         {
-            var avatar = await _dataContext.Categorias
+            var avatar = await _dataContext.Categoria
                 .FirstOrDefaultAsync(c => c.CategoriaId == id);
            
-            _dataContext.Categorias.Remove(avatar);
+            _dataContext.Categoria.Remove(avatar);
             var r = await SaveAllAsync();
             return r == true ? 1 : 0;
         }
 
         public async Task<IReadOnlyList<Categoria>> GetAllAsync()
         {
-            return await _dataContext.Categorias.ToListAsync();
+            return await _dataContext.Categoria.ToListAsync();
         }
 
         public async Task<List<Categoria>> GetAllTblCategoriaAsync()
         {
-           return await _dataContext.Categorias.ToListAsync(); 
+           return await _dataContext.Categoria.ToListAsync(); 
         }
 
         public async Task<Categoria> GetByIdAsync(int id)
         {
-            return await _dataContext.Categorias.FirstOrDefaultAsync(c => c.CategoriaId.Equals(id));
+            return await _dataContext.Categoria.FirstOrDefaultAsync(c => c.CategoriaId.Equals(id));
         }
 
         public async Task<Categoria> GetOnlyTblCategoriaAsync(int id)
         {
-            return await _dataContext.Categorias
+            return await _dataContext.Categoria
                 .FirstOrDefaultAsync(c => c.CategoriaId.Equals(id));
         }
 
         public async Task<int> UpdateAsync(Categoria entity)
         {
-            _dataContext.Categorias.Update(entity);
+            _dataContext.Categoria.Update(entity);
             var r = await SaveAllAsync();
             return r == true ? 1 : 0;
+        }
+        public async Task<bool> ExisteCategoriaAsync(string nombre)
+        {
+            bool valor = await _dataContext.Categoria.AnyAsync(c => c.Nombre.ToLower().Trim() == nombre.ToLower().Trim());
+            return valor;
+        }
+
+        public async Task<bool> ExisteCategoriaAsync(int id)
+        {
+            return await _dataContext.Categoria.AnyAsync(c => c.CategoriaId == id);
         }
         private async Task<bool> SaveAllAsync()
         {

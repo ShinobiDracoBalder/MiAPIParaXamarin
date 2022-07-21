@@ -163,7 +163,7 @@ namespace MiAPIParaXamarin.Factories.Repositories
 
         public async Task<GenericResponse<T>> GetAllAsync<T>(string sp, DynamicParameters parms, CommandType commandType = CommandType.Text)
         {
-            using IDbConnection db = new SqlConnection(_configuration.GetConnectionString(Connectionstring));
+            using IDbConnection db = new SqlConnection(_configuration.GetConnectionString("DefaultPetroConnection"));
             try
             {
                 if (db.State == ConnectionState.Closed)
